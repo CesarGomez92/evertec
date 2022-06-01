@@ -21,6 +21,7 @@ class ProductFactory extends Factory
             'description' => $this->faker->sentence,
             'price' => (rand(10,100) * 10000),
             'reference' => $this->faker->unique()->numberBetween($min = 1000000, $max = 9999999),
+            'image' => $this->faker->imageUrl($width = 640, $height = 480),
         ];
     }
 }
