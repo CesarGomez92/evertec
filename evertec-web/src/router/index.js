@@ -4,7 +4,7 @@ import DetailView from '@/views/DetailView.vue'
 import OrderStatusView from '@/views/OrderStatusView.vue'
 import OrderListView from '@/views/OrderListView.vue'
 
-const routes = [
+export const routes = [
   {
     path: '/',
     name: 'home',
