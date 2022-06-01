@@ -33,19 +33,19 @@ export function useCreateOrder() {
   const validateFields = (userData) => {
     errors.value = []
     if (userData.customer_identification_type === '') {
-      errors.value.push('Debes seleccionar el tipo de documento')
+      errors.value.push('You must select the document type')
     }
     if (userData.customer_identification === '') {
       errors.value.push('the field document is required')
     }
     if (Number.isNaN(userData.customer_identification)) {
-      errors.value.push('el campo identification debe ser numerico')
+      errors.value.push('the identification field must be numeric')
     }
     if (userData.customer_name === '') {
       errors.value.push('the field name is required')
     }
     if (userData.customer_name.length > 80) {
-      errors.value.push('el campo name no puede ser superior a 80 caracteres')
+      errors.value.push('the name field cannot be longer than 80 characters')
     }
     if (userData.customer_surname === '') {
       errors.value.push('the last name field is required')
@@ -54,16 +54,16 @@ export function useCreateOrder() {
       errors.value.push('the email field is required')
     }
     if (userData.customer_email.length > 120) {
-      errors.value.push('el campo email no puede ser superior a 120 caracteres')
+      errors.value.push('the email field cannot be longer than 120 characters')
     }
     if (userData.customer_mobile === '') {
       errors.value.push('the mobile field is required')
     }
     if (Number.isNaN(userData.customer_mobile)) {
-      errors.value.push('el campo mobile debe ser numerico')
+      errors.value.push('the mobile field must be numeric')
     }
     if (userData.customer_mobile.length > 40) {
-      errors.value.push('el campo name no puede ser superior a 40 caracteres')
+      errors.value.push('the mobile field cannot be longer than 40 characters')
     }
     if (userData.customer_country === '') {
       errors.value.push('the country field is required')
@@ -78,7 +78,7 @@ export function useCreateOrder() {
       errors.value.push('the postal code field is required')
     }
     if (Number.isNaN(userData.customer_postal_code)) {
-      errors.value.push('el campo postal code debe ser numerico')
+      errors.value.push('the postal code field must be numeric')
     }
     if (userData.customer_street === '') {
       errors.value.push('the street code field is required')

@@ -1,14 +1,27 @@
 <template>
   <div class="flex flex-col items-center p-2 justify-center w-full">
-    <p class="text-2xl">Tu pago esta siendo procesado</p>
+    <p v-if="orderStatus === 'REJECTED'" class="text-2xl">Your payment has been rejected</p>
+    <p
+      v-if="orderStatus === 'APPROVED'"
+      class="text-2xl"
+    >
+      Your payment has been made successfully
+    </p>
+    <p v-else class="text-2xl">Your payment is being processed</p>
     <product-item
       class="m-2"
       :product="selectedProduct"
       :showButton="false"
     />
     <h1 class="text-2xl mt-4">Status</h1>
-    <div>
-      <p class="text-3xl">{{ orderStatus }}</p>
+    <div class="mb-2">
+      <p v-if="orderStatus === 'REJECTED'" class="text-3xl text-red-500">
+        {{ orderStatus }}
+      </p>
+      <p v-if="orderStatus === 'APPROVED'" class="text-3xl text-orange-400">
+        {{ orderStatus }}
+      </p>
+      <p v-else class="text-3xl text-orange-400">{{ orderStatus }}</p>
     </div>
     <button
       class="button-style"
